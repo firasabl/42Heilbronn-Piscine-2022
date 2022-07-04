@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afiras  <afiras@student.42heilbronn.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/01 18:13:25 by afiras            #+#    #+#             */
+/*   Updated: 2022/07/04 13:53:41 by afiras           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdbool.h>
+
+int		ft_str_is_numeric(char *str)
+{
+	int		index;
+	bool	valid;
+	char	curr;
+
+	index = 0;
+	valid = true;
+	while (true)
+	{
+		curr = str[index];
+		if (curr == '\0')
+		{
+			break ;
+		}
+		if (!(curr >= '0' && curr <= '9'))
+		{
+			valid = false;
+			break ;
+		}
+		index++;
+	}
+	return (valid);
+}
